@@ -7,6 +7,20 @@
     <title>Chat App</title>
 </head>
 <body>
-    <p>Apan hi j bhagvan he !!</p>    
+    <p>Apan hi j bhagvan he !!</p>  
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        socket.on('connect', () => {
+            console.log('Connected to server');            
+        });
+
+        socket.on('disconnect', () => {
+            console.log('Disconnected to server');
+            
+        });
+    </script>
 </body>
 </html>
