@@ -16,6 +16,16 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
     console.log('New User Connected');
 
+    socket.emit('newMessage', {
+        from: 'hardik@gmail.com',
+        text: 'Bhagvan ko maante ho ??',
+        createdAt: 123
+    });
+
+    socket.on('createMessage', (message) => {
+        console.log('createMessage', message);        
+    });
+
     socket.on('disconnect', () => {
         console.log('User was disconnected'); 
     });
@@ -24,4 +34,3 @@ io.on('connection', (socket) => {
 server.listen(port, () => {
     console.log(`Server started at port ${port}`);
 });
-
