@@ -1,2 +1,5 @@
+# Node artifact files
 node_modules/
-package-lock.json
+
+# env file
+.env
